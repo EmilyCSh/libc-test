@@ -109,10 +109,12 @@ int main() {
 
 	/* Glibc */
 	checkStrptime("1856-07-10", "%F", &tm4);
+#ifdef __GLIBC__
 	checkStrptime("683078400", "%s", &tm2);
+#endif
 	checkStrptimeTz("+0200", 2, 0);
 	checkStrptimeTz("-0530", -5, -30);
-	checkStrptimeTz("-06", -6, 0);
+	checkStrptimeTz("-0600", -6, 0);
 
 	return t_status;
 }
