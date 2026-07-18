@@ -239,6 +239,7 @@ static struct {
 	{ "$'\\''$(echo bad)\\'", WRDE_NOCMD, WRDE_CMDSUB, 0, 0, WRDE_SYNTAX },
 	{ "$'\\''$(echo bad)\\'", 0, 0, 1, "'bad'|", WRDE_SYNTAX },
 	{ "$'\\'$(echo bad)'\\'", WRDE_NOCMD, 0, 1, "'$(echo bad)'|", WRDE_SYNTAX },
+	{ "$'\\n'$(echo bad)", WRDE_NOCMD, WRDE_CMDSUB },
 
 	{ "a|b",             WRDE_NOCMD, WRDE_BADCHAR },
 	{ "a&b",             WRDE_NOCMD, WRDE_BADCHAR },
@@ -375,6 +376,8 @@ static struct {
 	{ "\"${X-\"$\"A}\"", 0, 0, 1, "$A|" },
 	{ "\"${X-\"$\"{A}B}\"", 0, 0, 1, "${AB}|" },
 
+	{ "\"${Y=x\\}} ${Y%${X-'}'}}\"", WRDE_NOCMD, 0, 1, "x} x|" },
+
 	/* single-quote handling across shells is not portable. */
 	{ "\"${X-'}'}\"",       WRDE_NOCMD, 0, 1, "''}|", WRDE_SYNTAX },
 	{ "\"${X-'\\\"'}\"",    WRDE_NOCMD, 0, 1, "'\"'|", WRDE_SYNTAX },
@@ -396,6 +399,7 @@ static struct {
 	{ "${X=2} \"$((${X-\")\"}+1))\"", WRDE_NOCMD, 0, 2, "2|3|" },
 	{ "${X=2} \"$((${X-\"')'\"}+1))\"", WRDE_NOCMD, 0, 2, "2|3|" },
 
+	/* undef with cmd sub */
 	{ "$(echo x$UNSET)y",     0, 0, 1, "xy|" },
 	{ "$(echo x$UNSET)y",     WRDE_UNDEF, 0, 1, "y|", WRDE_BADVAL },
 	{ "\"$(echo x$UNSET)y\"", 0, 0, 1, "xy|" },
@@ -409,17 +413,18 @@ static struct {
 	{ "\t @\t $\t %\t []",  WRDE_NOCMD, 0, 4, "@|$|%|[]|" },
 	{ "${X} ${Y}",          WRDE_NOCMD, 0, 0, 0 },
 	{ "$\\$",               WRDE_NOCMD, 0, 1, "$$|" },
-	{ "$'$'",               WRDE_NOCMD, WRDE_SYNTAX },
+	{ "$'$'",               WRDE_NOCMD, 0, 1, "$|" },
 	{ "$)",                 WRDE_NOCMD, WRDE_BADCHAR },
 	{ "$}",                 WRDE_NOCMD, WRDE_BADCHAR },
 	{ "$: $~ $. $, $",      WRDE_NOCMD, 0, 5, "$:|$~|$.|$,|$|" },
 	{ "\"$) $} $\\ $\"",    WRDE_NOCMD, 0, 1, "$) $} $\\ $|" },
 	{ "${X-$''}",           WRDE_NOCMD, WRDE_SYNTAX },
-	{ "${X-\"$'$(cmd)'y\"}", WRDE_NOCMD, WRDE_SYNTAX },
+	{ "${X-\"$'$(cmd)'y\"}", WRDE_NOCMD, WRDE_CMDSUB },
 	{ "\"${X-$'$(cmd)'y}\"", WRDE_NOCMD, WRDE_SYNTAX },
 	{ "$((${X-$'$(cmd)'y}))", WRDE_NOCMD, WRDE_SYNTAX },
-	{ "$''",                WRDE_NOCMD, WRDE_SYNTAX },
-	{ "\"$''\"",            WRDE_NOCMD, WRDE_SYNTAX },
+	{ "$'\\'",              WRDE_NOCMD, WRDE_SYNTAX },
+	{ "$'x'",               WRDE_NOCMD, 0, 1, "x|" },
+	{ "\"$'x'\"",           WRDE_NOCMD, 0, 1, "$'x'|" },
 	{ "${X=1} $((${X-'}))", WRDE_NOCMD, WRDE_SYNTAX },
 	{ "${X=1} $((${X%'}))$(cmd)\'}))", WRDE_NOCMD, 0, 2, "1|1|" },
 	{ "${X=12} $((${X%\"'$(cmd)'\"}))", WRDE_NOCMD, WRDE_CMDSUB },
@@ -435,7 +440,7 @@ static struct {
 	{ "$((case x in x) echo a;; esac) )", WRDE_NOCMD, WRDE_CMDSUB },
 	{ "\"${X-))}\"",        WRDE_NOCMD, 0, 1, "))|" },
 	{ "${X%${X-'}}",        WRDE_NOCMD, WRDE_SYNTAX },
-	{ "${X%${X-'}}'}}",     WRDE_NOCMD, 0, 0, 0 },
+	{ "${Y=x\\}} ${Y%${X-'}'}}", WRDE_NOCMD, 0, 2, "x}|x|" },
 	{ "\"${AB%${X-'$(echo b)'}}\"", WRDE_NOCMD, 0, 1, "ab|" },
 	{ "\"${AB%${X-'b'}}\"", WRDE_NOCMD, 0, 1, "a|" },
 
