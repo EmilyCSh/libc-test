@@ -33,7 +33,7 @@ int main(void)
 		fflush(f);
 		if (TEST(fstat(fileno(f),&st)==0, "errnp = %s\n", strerror(errno))) {
 			TEST(st.st_uid==geteuid(), "%d vs %d\n", (int)st.st_uid, (int)geteuid());
-			TEST(st.st_gid==getegid(), "%d vs %d\n", (int)st.st_uid, (int)geteuid());
+			TEST(st.st_gid==getegid(), "%d vs %d\n", (int)st.st_gid, (int)getegid());
 			TEST(st.st_size==5, "%jd vs 5\n", (intmax_t)st.st_size);
 		}
 		fclose(f);
