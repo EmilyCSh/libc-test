@@ -90,3 +90,6 @@ T(RN,                     nan,                  0x1p+0,                     nan,
 T(RN,                     nan,                 -0x1p+0,                     nan,          0x0p+0, 0)
 T(RN,                 -0x1p+1,                  0x1p+0,                 -0x1p+1,          0x0p+0, 0)
 T(RN,                 -0x1p+1,                 -0x1p+0,                 -0x1p-1,          0x0p+0, 0)
+T(RN,               -0x1.8p+0,             0x1.389p+12,                    -inf,          0x0p+0, INEXACT|OVERFLOW)
+T(RN,                 -0x1p-1,             0x1.389p+12,                 -0x0p+0,          0x0p+0, INEXACT|UNDERFLOW)
+T(RN,              -0x1p-1050,                 -0x1p+0,                    -inf,          0x0p+0, INEXACT|OVERFLOW)
