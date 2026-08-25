@@ -35,3 +35,4 @@ T(RN,       0x1.62e42fefa39ef352p-2L,       0x1.6a09e667f3bcc906p+0L,   -0x1.745
 T(RN,      -0x1.62e42fefa39ef352p-2L,       0x1.6a09e667f3bcc90ap-1L,  -0x1.578dbep-2, INEXACT)
 T(RN,       -0x1.62e42fefa39ef35p-2L,       0x1.6a09e667f3bcc90cp-1L,   0x1.3e685cp-2, INEXACT)
 T(RN,        -0x1.f1dc4d7eaf559p+12L,   0x1.c569cb2de9012b2ap-11493L,  -0x1.b46f34p-2, INEXACT)
+T(RN,                      -0x1p+14L,                        0x0p+0L,         -0x0p+0, INEXACT|UNDERFLOW)
