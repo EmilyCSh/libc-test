@@ -1,7 +1,7 @@
 #include <net/if.h>
 #define F(t,n) {t *y = &x.n;}
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 {
 struct if_nameindex x;

@@ -1,7 +1,7 @@
 #include <pthread.h>
 #define T(t) (t*)0;
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(pthread_attr_t)
 T(pthread_barrier_t)
@@ -163,7 +163,7 @@ C(PTHREAD_SCOPE_SYSTEM)
 #endif
 }
 #include <time.h>
-static void g()
+static void g(void)
 {
 {int(*p)(pthread_t,clockid_t*) = pthread_getcpuclockid;}
 {int(*p)(pthread_mutex_t*restrict,const struct timespec*restrict) = pthread_mutex_timedlock;}

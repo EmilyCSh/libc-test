@@ -1,6 +1,6 @@
 #include <stdarg.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 T(va_list)
 #ifndef va_start

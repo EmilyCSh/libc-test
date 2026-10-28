@@ -2,7 +2,7 @@
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(uint32_t)
 T(socklen_t)
@@ -90,7 +90,7 @@ C(EAI_OVERFLOW)
 {void(*p)(int) = setservent;}
 }
 #include <sys/socket.h>
-static void g()
+static void g(void)
 {
 {void(*p)(struct addrinfo*) = freeaddrinfo;}
 {int(*p)(const char*restrict,const char*restrict,const struct addrinfo*restrict,struct addrinfo**restrict) = getaddrinfo;}

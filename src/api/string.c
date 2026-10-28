@@ -1,6 +1,6 @@
 #include <string.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 T(size_t)
 {void *x=NULL;}

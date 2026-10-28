@@ -2,7 +2,7 @@
 #define I(t,e) {t x[sizeof(t)==sizeof(e)] = {e};}
 #define C(n) switch(n){case n:;}
 #define D(n) {long double d = n;}
-static void f()
+static void f(void)
 {
 I(int,FLT_ROUNDS)
 C(FLT_EVAL_METHOD)

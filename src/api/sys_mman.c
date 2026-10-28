@@ -3,7 +3,7 @@
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(mode_t)
 T(off_t)

@@ -1,5 +1,5 @@
 #include <semaphore.h>
-static void f()
+static void f(void)
 {
 {sem_t *x = SEM_FAILED;}
 {int(*p)(sem_t*) = sem_close;}
@@ -13,7 +13,7 @@ static void f()
 {int(*p)(sem_t*) = sem_wait;}
 }
 #include <time.h>
-static void g()
+static void g(void)
 {
 {int(*p)(sem_t*restrict,const struct timespec*restrict) = sem_timedwait;}
 }

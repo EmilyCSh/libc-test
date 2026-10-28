@@ -1,6 +1,6 @@
 #include <setjmp.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 T(jmp_buf)
 {void(*p)(jmp_buf,int) = longjmp;}

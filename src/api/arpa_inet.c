@@ -2,7 +2,7 @@
 #define T(t) (t*)0;
 #define C(n) switch(n){case n:;}
 #define I(t,e) {t x[sizeof(t)==sizeof(e)] = {e};}
-static void f()
+static void f(void)
 {
 T(in_port_t)
 T(in_addr_t)

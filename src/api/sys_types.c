@@ -1,7 +1,7 @@
 #include <sys/types.h>
 #define T(t) (t*)0;
 #define N(t) {t x = 1;}
-static void f()
+static void f(void)
 {
 N(blkcnt_t)
 N(blksize_t)

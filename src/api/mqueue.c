@@ -3,7 +3,7 @@
 #include <mqueue.h>
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-static void f()
+static void f(void)
 {
 T(mqd_t)
 T(pthread_attr_t)
@@ -28,7 +28,7 @@ F(long, mq_curmsgs)
 {int(*p)(const char*) = mq_unlink;}
 }
 #include <time.h>
-static void g()
+static void g(void)
 {
 {ssize_t(*p)(mqd_t,char*restrict,size_t,unsigned*restrict,const struct timespec*restrict) = mq_timedreceive;}
 {int(*p)(mqd_t,const char*,size_t,unsigned,const struct timespec*) = mq_timedsend;}

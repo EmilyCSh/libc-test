@@ -1,7 +1,7 @@
 #include <sys/uio.h>
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-static void f()
+static void f(void)
 {
 T(size_t)
 T(ssize_t)

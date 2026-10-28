@@ -2,7 +2,7 @@
 #include "options.h"
 #define T(t) (t*)0;
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(posix_spawnattr_t)
 T(posix_spawn_file_actions_t)
@@ -33,7 +33,7 @@ C(POSIX_SPAWN_SETSIGMASK)
 {int(*p)(pid_t*restrict,const char*restrict,const posix_spawn_file_actions_t*,const posix_spawnattr_t*restrict,char*const[restrict],char*const[restrict]) = posix_spawnp;}
 }
 #include <signal.h>
-static void g()
+static void g(void)
 {
 {int(*p)(const posix_spawnattr_t*restrict,sigset_t*restrict) = posix_spawnattr_getsigdefault;}
 {int(*p)(const posix_spawnattr_t*restrict,sigset_t*restrict) = posix_spawnattr_getsigmask;}
@@ -42,7 +42,7 @@ static void g()
 }
 #ifdef POSIX_PRIORITY_SCHEDULING
 #include <sched.h>
-static void h()
+static void h(void)
 {
 {int(*p)(const posix_spawnattr_t*restrict,struct sched_param*restrict) = posix_spawnattr_getschedparam;}
 {int(*p)(const posix_spawnattr_t*restrict,int*restrict) = posix_spawnattr_getschedpolicy;}

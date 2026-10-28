@@ -1,6 +1,6 @@
 #include <monetary.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 T(locale_t)
 T(size_t)

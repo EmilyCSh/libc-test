@@ -1,7 +1,7 @@
 #include <sys/un.h>
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-static void f()
+static void f(void)
 {
 T(sa_family_t)
 {

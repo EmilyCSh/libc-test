@@ -1,6 +1,6 @@
 #include <iconv.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 T(iconv_t)
 T(size_t)

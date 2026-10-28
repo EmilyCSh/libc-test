@@ -3,7 +3,7 @@
 #define C(n) switch(n){case n:;}
 #define I(t,e) {t x[sizeof(t)==sizeof(e)] = {e};}
 #define D(n) {double d = n;}
-static void f()
+static void f(void)
 {
 T(float_t)
 T(double_t)

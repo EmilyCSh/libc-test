@@ -1,6 +1,6 @@
 #include <strings.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 T(size_t)
 T(locale_t)

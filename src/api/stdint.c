@@ -1,7 +1,7 @@
 #include <stdint.h>
 #define T(t) (t*)0;
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(int8_t)
 T(int16_t)

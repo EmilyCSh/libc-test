@@ -1,7 +1,7 @@
 #include <grp.h>
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-static void f()
+static void f(void)
 {
 T(gid_t)
 T(size_t)

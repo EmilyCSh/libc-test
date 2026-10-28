@@ -2,7 +2,7 @@
 #define T(t) (t*)0;
 #define S(n) {char s[] = "" n;}
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(imaxdiv_t)
 T(int8_t)
@@ -256,7 +256,7 @@ S(SCNxPTR)
 {uintmax_t(*p)(const char*restrict,char**restrict,int) = strtoumax;}
 }
 #include <stddef.h>
-static void g()
+static void g(void)
 {
 {intmax_t(*p)(const wchar_t*restrict,wchar_t**restrict,int) = wcstoimax;}
 {uintmax_t(*p)(const wchar_t*restrict,wchar_t**restrict,int) = wcstoumax;}

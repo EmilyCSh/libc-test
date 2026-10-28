@@ -1,6 +1,6 @@
 #include <complex.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 T(float complex)
 

@@ -1,7 +1,7 @@
 #include <limits.h>
 #include "options.h"
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 C(BC_BASE_MAX)
 C(BC_DIM_MAX)

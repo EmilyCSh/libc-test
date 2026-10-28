@@ -3,7 +3,7 @@
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 C(F_DUPFD)
 C(F_DUPFD_CLOEXEC)
@@ -93,7 +93,7 @@ T(pid_t)
 #ifndef _XOPEN_SOURCE
 #include <sys/stat.h>
 #endif
-static void g()
+static void g(void)
 {
 {int(*p)(const char*,mode_t) = creat;}
 {int(*p)(const char*,int,...) = open;}

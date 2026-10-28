@@ -1,6 +1,6 @@
 #include <ctype.h>
 #define T(t) (t*)0;
-static void f()
+static void f(void)
 {
 {int(*p)(int) = isalnum;}
 {int(*p)(int) = isalpha;}

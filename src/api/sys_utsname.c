@@ -1,6 +1,6 @@
 #include <sys/utsname.h>
 #define F(t,n) {t *y = &x.n;}
-static void f()
+static void f(void)
 {
 {
 struct utsname x;

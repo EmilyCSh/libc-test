@@ -2,7 +2,7 @@
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(FILE)
 T(fpos_t)
@@ -92,7 +92,7 @@ C(EOF)
 {int(*p)(int,FILE*) = ungetc;}
 }
 #include <wchar.h>
-static void g()
+static void g(void)
 {
 {wint_t(*p)(int) = btowc;}
 {wint_t(*p)(FILE*) = fgetwc;}
@@ -112,7 +112,7 @@ static void g()
 {int(*p)(const wchar_t*restrict,...) = wscanf;}
 }
 #include <stdarg.h>
-static void h()
+static void h(void)
 {
 {int(*p)(int,const char*restrict,va_list) = vdprintf;}
 {int(*p)(FILE*restrict,const char*restrict,va_list) = vfprintf;}

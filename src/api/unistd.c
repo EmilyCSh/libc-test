@@ -4,7 +4,7 @@
 #define F(t,n) {t *y = &x.n;}
 #define C(n) switch(n){case n:;}
 #define A(n) {char p[n];}
-static void f()
+static void f(void)
 {
 A(_POSIX_VERSION >= 200809L)
 A(_POSIX2_VERSION >= 200809L)

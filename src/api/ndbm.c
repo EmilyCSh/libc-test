@@ -3,7 +3,7 @@
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(size_t)
 T(mode_t)
@@ -26,5 +26,5 @@ C(DBM_REPLACE)
 {int(*p)(DBM*,datum,datum,int) = dbm_store;}
 }
 #else
-static void f(){}
+static void f(void){}
 #endif

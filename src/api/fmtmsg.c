@@ -1,7 +1,7 @@
 #ifdef X_FMTMSG
 #include <fmtmsg.h>
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 C(MM_HARD)
 C(MM_SOFT)
@@ -25,5 +25,5 @@ C(MM_NOCON)
 {int(*p)(long,const char*,int,const char*,const char*,const char*) = fmtmsg;}
 }
 #else
-static void f(){}
+static void f(void){}
 #endif

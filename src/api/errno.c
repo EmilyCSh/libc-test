@@ -1,6 +1,6 @@
 #include <errno.h>
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 {int c = errno;}
 C(EDOM)

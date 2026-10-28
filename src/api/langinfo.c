@@ -1,7 +1,7 @@
 #include <langinfo.h>
 #define T(t) (t*)0;
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 T(locale_t)
 T(nl_item)

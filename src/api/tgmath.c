@@ -1,5 +1,5 @@
 #include <tgmath.h>
-static void f()
+static void f(void)
 {
 double x=0, y=0, z=0;
 int i;

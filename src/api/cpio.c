@@ -1,6 +1,6 @@
 #include <cpio.h>
 #define C(n) switch(n){case n:;}
-static void f(){
+static void f(void){
 C(C_IRUSR)
 C(C_IWUSR)
 C(C_IXUSR)

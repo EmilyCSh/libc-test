@@ -1,6 +1,6 @@
 #include <fnmatch.h>
 #define C(n) switch(n){case n:;}
-static void f()
+static void f(void)
 {
 C(FNM_NOMATCH)
 C(FNM_PATHNAME)
