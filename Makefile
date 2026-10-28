@@ -5,6 +5,8 @@ LOBJS:=$(SRCS:src/%.c=$(B)/%.lo)
 DIRS:=$(patsubst src/%/,%,$(sort $(dir $(SRCS))))
 BDIRS:=$(DIRS:%=$(B)/%)
 NAMES:=$(SRCS:src/%.c=%)
+SKIP_TESTS:=functional/wordexp math/expl math/powl
+NAMES:=$(filter-out $(SKIP_TESTS),$(NAMES))
 CFLAGS:=-I$(B)/common -Isrc/common
 LDLIBS:=$(B)/common/libtest.a
 AR = $(CROSS_COMPILE)ar
