@@ -1,6 +1,6 @@
 #include <iso646.h>
-#define C(n) switch(n){case n:;}
-static void f(){
+#define C(n) switch((n)+0){case n:;}
+static void f(void){
 int i = 0;
 i and_eq 1;
 i or_eq 1;

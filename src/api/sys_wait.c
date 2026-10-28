@@ -1,8 +1,8 @@
 #include <sys/wait.h>
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-#define C(n) switch(n){case n:;}
-static void f()
+#define C(n) switch((n)+0){case n:;}
+static void f(void)
 {
 T(id_t)
 T(pid_t)

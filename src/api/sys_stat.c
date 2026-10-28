@@ -2,8 +2,8 @@
 #include "options.h"
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-#define C(n) switch(n){case n:;}
-static void f()
+#define C(n) switch((n)+0){case n:;}
+static void f(void)
 {
 T(blkcnt_t)
 T(blksize_t)

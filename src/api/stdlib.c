@@ -1,9 +1,9 @@
 #include <stdlib.h>
 #define T(t) (t*)0;
 #define F(t,n) {t *y = &x.n;}
-#define C(n) switch(n){case n:;}
+#define C(n) switch((n)+0){case n:;}
 #define I(t,e) {t x[sizeof(t)==sizeof(e)] = {e};}
-static void f()
+static void f(void)
 {
 C(EXIT_FAILURE)
 C(EXIT_SUCCESS)
@@ -96,7 +96,7 @@ C(WUNTRACED)
 
 #ifdef _XOPEN_SOURCE
 #include <fcntl.h>
-static void g()
+static void g(void)
 {
 {int(*p)(int) = posix_openpt;}
 }
