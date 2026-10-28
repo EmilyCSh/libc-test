@@ -28,10 +28,12 @@ T("$2a$04$abcdefghijklmnopqrstuuEgxSMhZgdHqm5w1Iw6ZfXSn4If4J406",
 	"$2a$04$abcdefghijklmnopqrstuv", "\xff\xff\xff\xa3\x33\x01\x40")
 T("$2a$04$abcdefghijklmnopqrstuu8J3SjO9LQpndv9O3HW/e0PB1xKk.PJu",
 	"$2a$04$abcdefghijklmnopqrstuv", "Aa@\xaa 0123456789")
+#ifndef XCRYPT_VERSION_NUM
 T("$2x$04$abcdefghijklmnopqrstuubUAnPDiHn0JtKfNM4q6HN1ZsdaC1D8i",
 	"$2x$04$abcdefghijklmnopqrstuv", "\xff\xff\xff\xa3\x33\x01\x40")
 T("$2x$04$abcdefghijklmnopqrstuuxYRr8W0rYwastFTc35iurVdXD9PtVhq",
 	"$2x$04$abcdefghijklmnopqrstuv", "Aa@\xaa 0123456789")
+#endif
 T("$2y$04$abcdefghijklmnopqrstuubUAnPDiHn0JtKfNM4q6HN1ZsdaC1D8i",
 	"$2y$04$abcdefghijklmnopqrstuv", "\xff\xff\xff\xa3\x33\x01\x40")
 T("$2y$04$abcdefghijklmnopqrstuu8J3SjO9LQpndv9O3HW/e0PB1xKk.PJu",
@@ -40,8 +42,10 @@ T("$2y$04$abcdefghijklmnopqrstuu8J3SjO9LQpndv9O3HW/e0PB1xKk.PJu",
 T("$5$$3c2QQ0KjIU1OLtB29cl8Fplc2WN7X89bnoEjaR7tWu.", "$5$$", "")
 T("$5$rounds=1234$abc0123456789$3VfDjPt05VHFn47C/ojFZ6KRPYrOjj1lLbH.dkF3bZ6", "$5$rounds=1234$abc0123456789$", "Xy01@#\x01\x02\x80\x7f\xff\r\n\x81\t !")
 T("$5$salt1234$1145V3OxW91Wl.LSS3pmBHvb2jV3ujiUhD7DgpoJtw9", "$5$salt1234$", "Aa@\xaa 0123456789")
+#ifndef XCRYPT_VERSION_NUM
 T("$5$rounds=1000$$ZIwsx59lFMWVo3Yt6IxpZVn0IhpY8Yg4gxC21zUDBI4", "$5$rounds=1$", "a")
 T("$5$rounds=1234$$i.IiuqtWmTzupHAZtfV/PB33Usz.MwGHq9BKFAEj.B3", "$5$rounds=00001234$", "a")
+#endif
 /* incompatible with glibc crypt (sha crypt design bugs) */
 //T("*", "$5$rounds=$", "")
 //T("*", "$5$rounds=1234", "")
@@ -58,8 +62,10 @@ T("$5$rounds=5000$toolongsaltstrin$Un/5jzAHMgOGZ5.mWJpuVolil07guHPvOW8mGRcvxa5",
 	"$5$rounds=5000$toolongsaltstring", "This is just a test")
 T("$5$rounds=1400$anotherlongsalts$Rx.j8H.h8HjEDGomFU8bDkXm3XIUnzyxf12oP84Bnq1",
 	"$5$rounds=1400$anotherlongsaltstring", "a very much longer text to encrypt.  This one even stretches over morethan one line.")
+#ifndef XCRYPT_VERSION_NUM
 T("$5$rounds=1000$roundstoolow$yfvwcWrQ8l/K0DAWyuPMDNHpIVlTQebY9l/gL972bIC",
 	"$5$rounds=10$roundstoolow", "the minimum number is still observed")
+#endif
 /* slow tests */
 //T("$5$rounds=10000$saltstringsaltst$3xv.VbSHBb41AL9AvLeujZkZRBAwqFMz2.opqey6IcA",
 //	"$5$rounds=10000$saltstringsaltstring", "Hello world!")
@@ -74,10 +80,12 @@ T("$6$rounds=1234$abc0123456789$BCpt8zLrc/RcyuXmCDOE1ALqMXB2MH6n1g891HhFj8.w7LxG
 	"$6$rounds=1234$abc0123456789$", "Xy01@#\x01\x02\x80\x7f\xff\r\n\x81\t !")
 T("$6$salt1234$44TYByJTJkEpcbmj8XzV6H7ltUN.7FUFFWKGeph85fMuAME8f1yQnXxqPbz6gfMq7tisOjTrxg3S2DDebWewt1",
 	"$6$salt1234$", "Aa@\xaa 0123456789")
+#ifndef XCRYPT_VERSION_NUM
 T("$6$rounds=1000$$hETGMQQ5sXu1md3PrmRCM4AxTgbNpYQaIhk4xQzvCiNfeogfCR9PZGSRXghUOxMAPFU2wuz/ZLafIHrHopO.60",
 	"$6$rounds=1$", "a")
 T("$6$rounds=1234$$.9spjeVb1fINMikxgAZEpur.ZQ/Gte./HuKWm2sAZ37eK3e1.ZdfRuatKdR/H..lKQfb2AB.RtHh7xKm.FE2J.",
 	"$6$rounds=00001234$", "a")
+#endif
 /* incompatible with glibc crypt (sha crypt design bugs) */
 //T("*", "$6$rounds=$", "")
 //T("*", "$6$rounds=1234", "")
@@ -94,8 +102,10 @@ T("$6$rounds=5000$toolongsaltstrin$lQ8jolhgVRVhY4b5pZKaysCLi0QBxGoNeKQzQ3glMhwll
 	"$6$rounds=5000$toolongsaltstring", "This is just a test")
 T("$6$rounds=1400$anotherlongsalts$POfYwTEok97VWcjxIiSOjiykti.o/pQs.wPvMxQ6Fm7I6IoYN3CmLs66x9t0oSwbtEW7o7UmJEiDwGqd8p4ur1",
 	"$6$rounds=1400$anotherlongsaltstring", "a very much longer text to encrypt.  This one even stretches over morethan one line.")
+#ifndef XCRYPT_VERSION_NUM
 T("$6$rounds=1000$roundstoolow$kUMsbe306n21p9R.FRkW3IGn.S9NPN0x50YhH1xhLsPuWGsUSklZt58jaTfF4ZEQpyUNGc0dqbpBYYBaHHrsX.",
 	"$6$rounds=10$roundstoolow", "the minimum number is still observed")
+#endif
 /* slow tests */
 //T("$6$rounds=10000$saltstringsaltst$OW1/O6BYHV6BcXZu8QVeXbDWra3Oeqh0sbHbbMCVNSnCM/UrjmM0Dp8vOuZeHBy/YTBmSK6H9qs/y3RnOaw5v.",
 //	"$6$rounds=10000$saltstringsaltstring", "Hello world!")
