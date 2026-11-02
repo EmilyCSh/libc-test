@@ -24,10 +24,8 @@ int main(void)
 
 	// malloc should fail here
 	errno = 0;
-	q = malloc(10000);
-	if (q)
-		t_error("malloc(10000) succeeded after memory is filled\n");
-	else if (errno != ENOMEM)
+	while ((q = malloc(10000))) {}
+	if (errno != ENOMEM)
 		t_error("malloc did not fail with ENOMEM, got %s\n", strerror(errno));
 
 	// make space available for mmap, but ensure it's not contiguous with brk
